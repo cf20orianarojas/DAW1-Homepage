@@ -1,0 +1,127 @@
+@import "reset.css";
+
+@font-face {
+    font-family: 'Hason Bold';
+    src: url(fonts/hanson-bold/Hanson-Bold.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Eingrantch Mono';
+    src: url(fonts/eingrantch_mono/EingrantchMono-Medium.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    background-image: url(img/fondo2.jpg);
+}
+
+a {
+    text-decoration: none;
+    font-style: inherit;
+    color: black;
+}
+
+.nav-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(9, 4, 29);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    font-size: large;
+    font-family: 'Eingrantch Mono';
+    padding: 1rem 3em;
+}
+
+li a:hover {
+    background-color: rgb(59, 0, 50);
+}
+
+header {
+    background-color: rgb(9, 4, 29);
+}
+
+header h1 {
+    font-family: 'Hason Bold';
+    color: white;
+    font-size: 2.3rem;
+    text-align: right;
+    padding-right: 1em;
+}
+
+header h2 {
+    font-family: 'Hason Bold';
+    color: white;
+    font-size: 1.3rem;
+    padding-right: 1.7em;
+    text-align: right;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+    '     navbar     '
+    '           title'
+    '     content    '
+    ' footer         ';
+}
+
+.content {
+    display: grid;
+    gap: 1em;
+    grid-template-areas: 
+    ' uno   dos   tres';
+}
+
+.content a:hover {
+    background-color: rgb(159, 141, 235);
+}
+
+.content a {
+    margin: 2.5em;
+    padding: 2em;
+    background-color: white;
+    border: 2px solid rgb(9, 4, 29);
+    font-family: 'Eingrantch Mono';
+    box-shadow: 10px 10px 5px rgb(159, 141, 235);
+}
+
+.content-about {
+    font-family: 'Eingrantch Mono';
+    margin: 2.5em;
+    padding: 2em;
+    border: 2px solid rgb(9, 4, 29);
+    box-shadow: 10px 10px 5px rgb(159, 141, 235);
+}
+
+.content-about h1 {
+    font-family: 'Hason Bold';
+    margin: 10px;
+}
+
+footer {
+    padding: 30px;
+    margin-top: -20px;
+    margin-left: 20px;
+    font-family: 'Hason Bold';
+    font-size: 1.5rem;
+    color: blue;
+}
+
+footer img {
+    width: 130px;
+    margin-left: 150px;
+    margin: -40px 270px;
+}
