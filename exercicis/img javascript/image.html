@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Oriana Rojas">
+    <title>Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="boton">
+        <button class="image">Open</button>
+    </div>
+
+    <div class="popup-image">
+        <span>&times;</span>
+        <img id="show" src="imagegif.gif">
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.container #boton button').forEach (button=>{
+    button.onclick = () =>{  
+        document.querySelector('.popup-image').style.display='block';
+        document.querySelector('.popup-image img').src = image.getAttribute('src');
+    }  
+});
+
+document.querySelector('.popup-image span').onclick = () =>{
+    document.querySelector('.popup-image').style.display='none';
+}
+
+</script>
+
+</body>
+
+</html>
