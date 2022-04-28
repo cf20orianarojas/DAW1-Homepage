@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="main-container">
+    <header>
+        <h1>TAME IMPALA</h1>
+    </header>
+
+        <section class="bigimg">
+        <img src="cover-img.jpg" alt="">
+        </section>
+
+        
+        <div class="content-information">
+            <h2>CURRENTS</h2>
+            <p> <strong>Studio album</strong> by <a href="https://en.wikipedia.org/wiki/Tame_Impala" >Tame Impala</a> </p>
+            <p><strong>Released</strong> 17 July 2015</p> 
+            <p><strong>Genre</strong> Psychedelic pop · synth-pop · disco · R&B</p>
+            <p><strong>Producer </strong> <a href="https://en.wikipedia.org/wiki/Kevin_Parker_(musician)"> Kevin Parker</a></p>
+            <p><strong>My Favorite Songs </strong></p>
+            <ol>
+                <li>
+                    "Let It Happen"
+                </li>
+                <li>
+                    "Cause I'm a Man"
+                </li>
+                <li>
+                    "Eventually"
+                </li>
+                <li>
+                    "The Less I Know the Better"
+                </li>
+            </ol>
+        </div>
+
+        <div class="reproductor">
+            <div class="info" id="info">
+                <span class="name">Let It Happen</span>
+                <span class="artist">Tame Impala</span>
+                <div class="barra-prog">
+                    <div class="barra"></div>
+                </div>
+            </div>
+    
+            <div class="panel-control" id="panel-control">
+                <div class="album-cover">
+                    <img src="cover.jpg" alt="">
+                </div>
+                <div class="buttons">
+                    <button id="prev"><i class='bx bx-skip-previous'></i></button>
+                    <button id="play"><i class='bx bx-play'></i></button>
+                    <button id="next"><i class='bx bx-skip-next'></i></button>
+                </div>
+            </div>
+        </div>
+    
+        <audio id="Music" controls style="display: none;">
+            <source src="music/Let It Happen.mp3"  type="audio/mpeg">
+        </audio>
+        
+        <audio id="Music" controls style="display: none;">
+            <source src="music/Cause Im A Man.mp3"  type="audio/mpeg">
+        </audio>
+
+        <audio id="Music" controls style="display: none;">
+            <source src="music/Eventually.mp3"  type="audio/mpeg">
+        </audio>
+
+        <audio id="Music" controls style="display: none;">
+            <source src="music/The Less I Know the Better.mp3"  type="audio/mpeg">
+        </audio>
+    </body>
+
+    <script src="script.js"></script>
+</html>

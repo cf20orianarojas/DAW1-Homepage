@@ -1,0 +1,266 @@
+@font-face {
+    font-family: 'Grammara Normal';
+    src: url(../Grammara-Normal/GRAMMARA.TTF);
+    font-style: normal;
+}
+
+:root {
+    --my-gradient: linear-gradient(
+        130deg, #fa3c2d, #f9546c,
+        #ef4e30, #e27e33, #e8a52c
+    );
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {margin: 0; padding: 0; 
+    background: var(--my-gradient) no-repeat center fixed;
+    background-size: 100% 100%;}
+
+body::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.main-container {
+    margin: 0; padding: 0;
+}
+
+header {
+    font-family: 'Grammara Normal';
+    color: #f3c14a;
+    text-align: right;
+    margin-right: 15%;
+    overflow: hidden;
+    grid-area: header;
+    border: 0;
+}
+
+h2{
+    font-family: 'Grammara Normal';
+    color: #f3c14a;
+}
+
+strong {
+    color: #e8a52c;
+}
+
+a {
+    color:#1b1629;
+}
+
+ol li {
+    counter-increment: list;
+    list-style-type: none;
+    position: relative;
+}
+
+ol li:before {
+    color: #f3c14a;
+    content: counter(list) ".";
+}
+
+
+li {
+    padding: 10px;
+}
+  
+.bigimg img {
+    height: auto;
+    width: 100%;
+    max-width: 100vw;
+    grid-area: img;
+    padding: 15px;
+}
+
+.content-information {
+    background-color: rgba(152, 149, 149, 0.064);
+    border-radius: 15px;
+    margin-top: 12px;
+    height: 38vw;
+    width: 30vw;
+    grid-area: information;
+    padding: 40px;
+    color:#1b1629;
+    box-shadow: 0 20px 20px 5px rgba(20, 0, 70, 0.3);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.reproductor {
+    grid-area: 'player';
+    height: auto;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reproductor .info {
+    position: absolute;
+    top:0; opacity: 0;
+    height: 70px;
+    left: 940px;
+    right: 50px;
+    background-color: rgba(255, 255, 255, 0.397);
+    padding: 5px 15px 10px 110px;
+    border-radius: 15px;
+    transition: all 0.3s ease in opacity 0.3 ease-in;
+}
+
+.reproductor .info .name {
+    display: block;
+    color: #e27e33;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.reproductor .info .artist {
+    display: block;
+    color: #ca692c;
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.reproductor .info .barra-prog {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 3px;
+    width: 100%;
+}
+
+.reproductor .info .barra-prog .barra {
+    background-color: #d29017;
+    border-radius: 5px;
+    height: 100%;
+    left: 0; top: 0; bottom: 0;
+    width: 50%;
+    transition: width 0.1s linear;
+}
+
+.reproductor .info.active {
+    top: 230px;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.reproductor .panel-control {
+    position: relative;
+    background-color: #302548;
+    border-radius: 15px;
+    width: 300px;
+    height: 80px;
+    z-index: 5;
+    box-shadow: 0 20px 20px 5px rgba(20, 0, 70, 0.3);
+}
+
+.reproductor .panel-control .album-cover {
+    position: absolute;
+    left: 20px;
+    top: -15px;
+    height: 80px;
+    width: 80px;
+    border-radius: 10%;
+    box-shadow: 0 20px 20px 5px rgba(0, 0, 0, 0);
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
+.reproductor .panel-control .album-cover img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+}
+
+.reproductor .panel-control .album-cover::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80px;
+}
+
+.reproductor .panel-control.active .album-cover {
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+}
+
+.reproductor .panel-control .buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    height: 80px;
+    padding: 15px 10px 15px;
+}
+
+.reproductor .panel-control .buttons button{
+    z-index: 20;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #e27e33;
+    background: #231c35;
+    box-shadow: 0.1px 4px 4px 2px #231c35;
+}
+
+.reproductor .panel-control .buttons button:hover {
+    background: linear-gradient(to right, #fa3c2d, #f9546c, #e8a52c);
+    color:#231c35;
+    font-size: 25px;
+}
+
+.main-container {
+    display: grid;
+    grid-template-areas: 
+    'header     header      header'
+    'img     information    player';
+    row-gap: 2px;
+}
+
+@media screen and (max-width: 630px) {
+    .main-container {
+      display: grid;
+      grid-template-areas: 
+      '   header  '
+      '    img    '
+      'information'
+      '   player  ';
+      text-align: left;
+    }
+
+    .content-information {
+        height: auto;
+        width: auto;
+    }
+
+    .bigimg {
+        height: auto;
+        width: 100%;
+        max-width: 100vw;
+        display: flex;
+        justify-content: center;
+        margin:0;
+    }
+
+    .reproductor {
+        height: auto;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+    }
+}
